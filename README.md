@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pimjo Test Project
 
-## Getting Started
+This project is a web application built with Next.js, featuring user authentication, a dashboard, and a landing page.
 
-First, run the development server:
+## Setup and Run
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.  **Install dependencies:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    ```bash
+    npm install
+    ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+2.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    The application will be available at [http://localhost:3000](http://localhost:3000).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Approach and Structure
 
-## Learn More
+This project is a full-stack application built using the Next.js App Router.
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: Tailwind CSS (assumed from `postcss.config.mjs`)
+- **Database ORM**: [Prisma](https://www.prisma.io/)
+- **Authentication**: Custom authentication logic handling user sign-up and login.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project follows a feature-based structure:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `app/`: Contains the different routes of the application, organized into route groups: `(auth)`, `(dashboard)`, and `(landing)`.
+- `components/`: React components are organized by feature (`auth`, `dashboard`, `home`) or common usage (`common`).
+- `lib/`: Utility functions, database connection (`db.js`), and API helpers.
+- `prisma/`: Contains the database schema.
 
-## Deploy on Vercel
+## Assumptions and Known Issues
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- It is assumed that a PostgreSQL database is being used, as configured in the `.env` file (which is not present in this repository for security reasons). You will need to create your own `.env` file based on `.env.example` (if available) or the Prisma schema.
+- The project is currently in the development phase, and some features might not be fully implemented.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployed Live Version
+
+You can view the live application here: [Live Demo](https://pimjo-test.vercel.app/)
