@@ -21,7 +21,7 @@ This project is a web application built with Next.js, featuring user authenticat
 This project is a full-stack application built using the Next.js App Router.
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: Tailwind CSS (assumed from `postcss.config.mjs`)
+- **Styling**: Tailwind CSS
 - **Database ORM**: [Prisma](https://www.prisma.io/)
 - **Authentication**: Custom authentication logic handling user sign-up and login.
 
@@ -34,8 +34,8 @@ The project follows a feature-based structure:
 
 ## Assumptions and Known Issues
 
-- It is assumed that a PostgreSQL database is being used, as configured in the `.env` file (which is not present in this repository for security reasons). You will need to create your own `.env` file based on `.env.example` (if available) or the Prisma schema.
-- The project is currently in the development phase, and some features might not be fully implemented.
+- It is assumed that a PostgreSQL database is being used, as configured in the `.env` file (which is not present in this repository for security reasons). You will need to create your own `.env` file based on `.env.example`.
+- Due to some time short some component can't be compeleted, I was diagonised with UTI, and for that I could not finsh the project on time. but all the feature is working fine.
 
 ## Deployed Live Version
 
