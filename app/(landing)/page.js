@@ -1,5 +1,8 @@
 import Achievement from "@/components/home/Achievement";
 import HeroSection from "@/components/home/HeroSection";
+import Newsletter from "@/components/home/Newsletter";
+import Template from "@/components/home/Template";
+import WhyUs from "@/components/home/WhyUs";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,7 +10,9 @@ export default function Home() {
     <main className="font-dm">
       <HeroSection />
       <Achievement />
-      <h1>Hello pimjo</h1>
+      <WhyUs />
+      <Template />
+      <Newsletter />
     </main>
   );
 }

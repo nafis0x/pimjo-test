@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-[40px_1fr_40px] px-4 md:p-0 ">
         <div className="md:block hidden border-r border-border tilt-lines"></div>
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 py-5 gap-5 md:gap-0 lg:px-10 lg:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 py-5 px-5 gap-5 md:gap-0 lg:px-10 lg:py-20">
             <div className="lg:col-span-2">
               <Link href={"/"}>
                 <Image

@@ -46,6 +46,30 @@ body {
   );
 }
 
+.tilt-lines-b {
+  background: repeating-linear-gradient(
+    135deg,
+    #1a1e28 0px,
+    #1a1e28 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
+.down-border-b {
+  position: relative;
+}
+.down-border-b::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background-color: #1a1e28;
+}
+
 .down-border {
   position: relative;
 }
