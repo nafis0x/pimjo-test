@@ -35,7 +35,7 @@ export default function Achievement() {
                   individuals & companies of all sizes
                 </p>
               </div>
-              <div>
+              <div className="overflow-hidden">
                 <BrandSlider autoplay speed={2500}>
                   <Image
                     src={"/imgs/brand-1.png"}
