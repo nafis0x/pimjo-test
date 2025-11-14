@@ -37,6 +37,7 @@ The project follows a feature-based structure:
 - I used PostgreSQL database, as configured in the `.env` file (which is not present in this repository for security reasons). You will need to create your own `.env` file based on `.env.example`.
 - There wasn't any responsive design for other devices, so I made the website responsive as my assumptions.
 - I used react-icons for icons, some icons was unavailable, so consider the issue.
+- login credential : cat@cat.com || 12345678
 
 ## Deployed Live Version
 
