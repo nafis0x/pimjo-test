@@ -14,6 +14,7 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const validate = () => {
@@ -38,20 +39,24 @@ const SignUpForm = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      const res = await signupAction({ fullName, email, password });
-
-      console.log({ fullName, email, password });
-      if (res.success) {
-        setFullName("");
-        setEmail("");
-        setPassword("");
-        setErrors({});
-        router.refresh();
-        router.push("/dashboard");
-      } else {
-        setEmail("");
-        setPassword("");
-        window.alert(`Something's wrong: ${res.message}`);
+      setLoading(true);
+      try {
+        const res = await signupAction({ fullName, email, password });
+        console.log({ fullName, email, password });
+        if (res.success) {
+          setFullName("");
+          setEmail("");
+          setPassword("");
+          setErrors({});
+          router.refresh();
+          router.push("/dashboard");
+        } else {
+          setEmail("");
+          setPassword("");
+          window.alert(`Something's wrong: ${res.message}`);
+        }
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -155,10 +160,12 @@ const SignUpForm = () => {
         </div>
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-btn hover:brightness-110 hover:scale-105 transition-all duration-150 ease-linear text-white rounded-xl cursor-pointer"
+          className="w-full py-2 px-4 bg-btn hover:brightness-110 hover:scale-105 transition-all duration-150 ease-linear text-white rounded-xl cursor-pointer flex justify-center items-center gap-2"
+          disabled={loading}
         >
-          Sign Up
+          {loading ? "Signing Up..." : "Sign Up"}
         </button>
+
         <div className="flex items-center justify-center gap-1 mt-5">
           <p className="text-light text-sm font-normal">
             Already have an account?

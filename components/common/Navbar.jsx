@@ -81,7 +81,7 @@ export default async function Navbar({ menu }) {
               ) : (
                 <Link href={"/login"}>Sign in</Link>
               )}
-              <button className="bg-blackTxt border border-blackTxt hover:bg-transparent cursor-pointer w-[123px] h-[42px] flex items-center justify-center text-white hover:text-blackTxt text-sm font-medium rounded-xl">
+              <button className="bg-blackTxt blk-btn hover:bg-transparent cursor-pointer w-[123px] h-[42px] flex items-center justify-center text-white hover:text-blackTxt text-sm font-medium rounded-xl">
                 Pricing & FAQ
               </button>
               <SideNav menu={menu} />

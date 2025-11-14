@@ -13,6 +13,10 @@ export function proxy(request) {
     }
   }
 
+  if ((path === "/login" || path === "/signup") && token) {
+    return NextResponse.redirect(new URL("/dashboard", request.url));
+  }
+
   return NextResponse.next();
 }
 

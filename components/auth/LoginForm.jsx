@@ -14,6 +14,7 @@ const LogInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const validate = () => {
     const newErrors = {};
@@ -36,18 +37,23 @@ const LogInForm = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      const res = await loginAction({ email, password });
-      console.log({ email, password });
-      if (res.success) {
-        setEmail("");
-        setPassword("");
-        setErrors({});
-        router.refresh();
-        router.push("/dashboard");
-      } else {
-        setEmail("");
-        setPassword("");
-        window.alert(`Something's wrong: ${res.message}`);
+      setLoading(true);
+      try {
+        const res = await loginAction({ email, password });
+        console.log({ email, password });
+        if (res.success) {
+          setEmail("");
+          setPassword("");
+          setErrors({});
+          router.refresh();
+          router.push("/dashboard");
+        } else {
+          setEmail("");
+          setPassword("");
+          window.alert(`Something's wrong: ${res.message}`);
+        }
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -136,9 +142,10 @@ const LogInForm = () => {
         </div>
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-btn hover:brightness-110 hover:scale-105 transition-all duration-150 ease-linear text-white rounded-xl cursor-pointer"
+          className="w-full py-2 px-4 bg-btn hover:brightness-110 hover:scale-105 transition-all duration-150 ease-linear text-white rounded-xl cursor-pointer flex justify-center items-center gap-2"
+          disabled={loading}
         >
-          Sign In
+          {loading ? "Signing In..." : "Sign In"}
         </button>
         <div className="flex items-center justify-center gap-1 mt-5">
           <p className="text-light text-sm font-normal">

@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 export default function Newsletter() {
   return (
-    <div className="grid-container bg-[#030712] border-b border-[#1A1E28] my-20">
+    <div className="grid-container bg-[#030712] border-b border-[#1A1E28] my-10 md:my-20">
       <div className="md:block hidden border-r border-[#1A1E28]"></div>
       <div className="grid grid-cols-1 md:grid-cols-[40px_1fr_40px] px-4 md:p-0">
         <div className="md:block hidden border-r border-[#1A1E28] tilt-lines-b"></div>

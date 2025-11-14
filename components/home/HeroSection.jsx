@@ -59,7 +59,7 @@ export default function HeroSection() {
                 </p>
               </div>
               <div className="flex flex-col md:flex-row items-center gap-3 mt-8">
-                <button className="rounded-xl border border-border h-11 w-[190px] bg-white flex items-center justify-center gap-2">
+                <button className="btn-animation preview-btn">
                   <Image
                     src={"/imgs/figma.png"}
                     width={24}
@@ -72,7 +72,7 @@ export default function HeroSection() {
                   </p>{" "}
                   <IoIosArrowForward size={12} color="#6B7280" />
                 </button>
-                <button className="rounded-xl border border-border h-11 w-[190px] bg-[#3758F9] text-white flex items-center justify-center gap-2">
+                <button className="rounded-xl border border-border h-11 w-[190px] bg-[#3758F9] text-white flex items-center justify-center gap-2 btn-animation">
                   <p>
                     Buy now <span className="text-[#FFFFFFB8]">- one time</span>
                   </p>{" "}

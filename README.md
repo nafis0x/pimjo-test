@@ -34,8 +34,9 @@ The project follows a feature-based structure:
 
 ## Assumptions and Known Issues
 
-- It is assumed that a PostgreSQL database is being used, as configured in the `.env` file (which is not present in this repository for security reasons). You will need to create your own `.env` file based on `.env.example`.
-- Due to some time short some component can't be compeleted, I was diagonised with UTI, and for that I could not finsh the project on time. but all the feature is working fine.
+- I used PostgreSQL database, as configured in the `.env` file (which is not present in this repository for security reasons). You will need to create your own `.env` file based on `.env.example`.
+- There wasn't any responsive design for other devices, so I made the website responsive as my assumptions.
+- I used react-icons for icons, some icons was unavailable, so consider the issue.
 
 ## Deployed Live Version
 
